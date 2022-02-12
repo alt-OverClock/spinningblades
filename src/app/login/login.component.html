@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="loginimage">
+        <img  id="imagelog" src="assets\login.png">
+    </div>
+    <div class="container">
+        <div class="myCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="myLeftCtn">
+
+                        <form (ngSubmit)="loginuser()" [formGroup]="login" class="myForm text-center" >
+                            <header>Log in </header>
+                            <br>
+                            
+                            <div class="form-group">
+                               
+                                <input class="myInput" type="text" placeholder="Email" id="email" formControlName="email">
+                                <br>
+                                <small class="text-danger" *ngIf="email && email.invalid  && email.touched">This feild is invalid </small>
+                                
+                            </div>
+                            <div class="form-group">
+                                <br>
+                                
+                                <input class="myInput" type="password" placeholder="Password" id="password" formControlName="password">
+                                <br>
+                                <small class="text-danger" *ngIf="password && password.invalid  && password.touched">This feild is invalid </small>
+                            </div>
+                            <br>
+                            <br>
+                            <input [disabled]="login.invalid" type="submit" class="butt" id="loginButton" value="Log in" >
+                            
+                            
+                        </form>
+
+                    </div>
+                </div>
+                    
+                         <div class="col-md-6">
+                             <div class="myRightCtn">
+                                 <div class="box">
+                                     <header>Welcome to Spinning Blades</header>
+                                     <br>
+                                     <p>Don't have your account with us yet ? Click below to get started.</p>
+                                     <br>
+                                     <input type="button" class="butt-out" value="Sign up" id="signupLink">
+                                     
+                                     
+                                 </div>
+                             </div>
+                         </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
